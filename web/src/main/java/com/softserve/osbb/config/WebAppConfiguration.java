@@ -1,12 +1,17 @@
 package com.softserve.osbb.config;
 
+import com.softserve.osbb.config.multitenancy.TenantBeenFactoryPostProcessor;
+import com.softserve.osbb.model.Tenant;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.*;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -22,9 +27,10 @@ import javax.servlet.Filter;
 @SpringBootApplication
 @Import({ServiceApplication.class/*,SecurityConfiguration.class*/})
 @ComponentScan(basePackages = {"com.softserve.osbb"})
+@EnableJpaRepositories
 @EnableScheduling
 public class WebAppConfiguration extends WebMvcConfigurerAdapter {
-
+private static Logger logger = Logger.getLogger(WebAppConfiguration.class);
     public static void main(String[] args) {
         SpringApplication.run(new Object[]{WebAppConfiguration.class
         }, args);
@@ -61,5 +67,8 @@ public class WebAppConfiguration extends WebMvcConfigurerAdapter {
 
         return registrationBean;
     }
-
+    @Bean
+    public BeanFactoryPostProcessor beanFactoryPostProcessor() {
+        return new TenantBeenFactoryPostProcessor();
+    }
 }

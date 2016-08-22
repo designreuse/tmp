@@ -1,0 +1,19 @@
+{
+  "databaseChangeLog": [
+    {
+      "includeAll": {
+        "path": "classpath:/db/changelog/common/users/"
+      }
+    },
+    {
+      "includeAll": {
+        "path": "classpath:/db/changelog/common/roles/"
+      }
+    },
+    {
+      "includeAll": {
+        "path": "classpath:/db/changelog/common/osbbs/"
+      }
+    }
+  ]
+}

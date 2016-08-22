@@ -1,0 +1,37 @@
+{"databaseChangeLog": [
+      {
+        "changeSet": {
+          "id": "2016/08/20-02",
+          "author": "aska",
+          "objectQuotingStrategy": "QUOTE_ALL_OBJECTS",
+          "changes": [
+            {
+              "createTable": {
+                "columns": [
+                  {
+                    "column": {
+                      "autoIncrement": true,
+                      "constraints": {
+                        "primaryKey": true,
+                        "primaryKeyName": "roles_pkey"
+                      },
+                      "name": "role_id",
+                      "type": "SERIAL"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "role",
+                      "type": "VARCHAR(245)"
+                    }
+                  }
+                ]
+              ,
+                "tableName": "roles"
+              }
+            }]
+
+        }
+      }
+    ]
+}

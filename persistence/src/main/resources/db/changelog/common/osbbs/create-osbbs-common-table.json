@@ -1,0 +1,55 @@
+{"databaseChangeLog": [
+  {
+        "changeSet": {
+          "id": "2016/08/20-03",
+          "author": "aska",
+          "objectQuotingStrategy": "QUOTE_ALL_OBJECTS",
+          "changes": [
+            {
+              "createTable": {
+                "columns": [
+                  {
+                    "column": {
+                      "autoIncrement": true,
+                      "constraints": {
+                        "primaryKey": true,
+                        "primaryKeyName": "osbb_pkey"
+                      },
+                      "name": "osbb_id",
+                      "type": "SERIAL"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "name",
+                      "type": "VARCHAR(245)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "datasource_url",
+                      "type": "VARCHAR(245)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "datasource_user",
+                      "type": "VARCHAR(245)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "datasource_password",
+                      "type": "VARCHAR(245)"
+                    }
+                  }
+                ]
+              ,
+                "tableName": "osbbs"
+              }
+            }]
+
+        }
+      }
+    ]
+}

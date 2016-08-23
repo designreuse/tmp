@@ -112,7 +112,7 @@
                 </plugins>
             </build>
             <properties>
-                <db.connectionURL>jdbc:postgresql://localhost:5432/myosbb</db.connectionURL>
+                <db.connectionURL>jdbc:postgresql://localhost:5432/common</db.connectionURL>
                 <db.username>postgres</db.username>
                 <db.password>postgres</db.password>
             </properties>

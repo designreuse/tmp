@@ -1,5 +1,7 @@
 package com.softserve.osbb.config;
 
+import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreator;
+import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreatorPostgresImpl;
 import com.softserve.osbb.config.multitenancy.TenantBeenFactoryPostProcessor;
 import com.softserve.osbb.model.Tenant;
 import org.apache.log4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.*;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -53,8 +56,9 @@ private static Logger logger = Logger.getLogger(WebAppConfiguration.class);
     @Bean
     public PropertyPlaceholderConfigurer propertyPlaceholderConfigurer() {
         PropertyPlaceholderConfigurer ppc = new PropertyPlaceholderConfigurer();
-        ppc.setLocations(new ClassPathResource("config.properties")/*,                                     //default properties
-                new FileSystemResource("/home/nataliia/myosbb1/deployment/external.properties")*/);        //external properties
+        ppc.setLocations(new ClassPathResource("config.properties"),
+                //new FileSystemResource("/home/nataliia/myosbb1/deployment/external.properties"),
+                new FileSystemResource("/home/aska/project/tmp/myosbb/deployment/external.properties"));        //external properties
         ppc.setIgnoreUnresolvablePlaceholders(true);
         return ppc;
     }
@@ -70,5 +74,10 @@ private static Logger logger = Logger.getLogger(WebAppConfiguration.class);
     @Bean
     public BeanFactoryPostProcessor beanFactoryPostProcessor() {
         return new TenantBeenFactoryPostProcessor();
+    }
+
+    @Bean
+    public DatabaseRuntimeCreator databaseRuntimeCreator(){
+        return new DatabaseRuntimeCreatorPostgresImpl();
     }
 }

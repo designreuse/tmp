@@ -1,5 +1,7 @@
 package com.softserve.osbb.controller;
 
+import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreator;
+import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreatorPostgresImpl;
 import com.softserve.osbb.config.multitenancy.MyDataSource;
 import com.softserve.osbb.config.multitenancy.MyLiquibase;
 import com.softserve.osbb.model.Tenant;
@@ -44,6 +46,9 @@ public class TenantController {
     @Autowired
     ApplicationContext applicationContext;
 
+    @Autowired
+    DatabaseRuntimeCreator databaseRuntimeCreator;
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Tenant> addTenant(@RequestBody Tenant tenant) {
         logger.info("creating new tenant");
@@ -61,7 +66,7 @@ public class TenantController {
         logger.info("Password: " + tenant.getPassword());
 
         try {
-            Process p = Runtime.getRuntime().exec("createdb " + tenant.getTenantName() + " --owner " + tenant.getUsername());
+            Process p = databaseRuntimeCreator.create(Runtime.getRuntime(), tenant.getTenantName());
             p.waitFor();
             logger.info("Successfully create new database " + tenant.getTenantName());
         } catch (IOException e) {

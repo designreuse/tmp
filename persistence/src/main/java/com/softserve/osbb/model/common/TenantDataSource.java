@@ -1,4 +1,4 @@
-package com.softserve.osbb.config.multitenancy;
+package com.softserve.osbb.model.common;
 
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 
@@ -8,16 +8,16 @@ import java.util.Properties;
 /**
  * Created by Anastasiia Fedorak on 8/22/16.
  */
-public class MyDataSource{
+public class TenantDataSource {
     public static final String DRIVER = "org.postgresql.Driver";
-    private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(MyDataSource.class);
+    private org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(TenantDataSource.class);
     private String tenantIdentifier;
     private String driver;
     private String url;
     private String username;
     private String pass;
 
-    public MyDataSource(Properties properties) {
+    public TenantDataSource(Properties properties) {
         this.driver = DRIVER;
         this.tenantIdentifier = properties.getProperty("name");
         this.url = properties.getProperty("datasource.url");
@@ -34,5 +34,9 @@ public class MyDataSource{
                 .username(username)
                 .password(pass)
                 .build();
+    }
+
+    public String getTenantIdentifier(){
+        return tenantIdentifier;
     }
 }

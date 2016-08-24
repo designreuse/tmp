@@ -1,4 +1,4 @@
-package com.softserve.osbb.model;
+package com.softserve.osbb.model.common;
 
 import org.apache.log4j.Logger;
 

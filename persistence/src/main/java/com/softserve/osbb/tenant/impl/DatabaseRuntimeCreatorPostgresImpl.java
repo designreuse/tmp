@@ -1,7 +1,7 @@
-package com.softserve.osbb.config.multitenancy;
+package com.softserve.osbb.tenant.impl;
 
+import com.softserve.osbb.tenant.DatabaseRuntimeCreator;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 
 import java.io.IOException;
 

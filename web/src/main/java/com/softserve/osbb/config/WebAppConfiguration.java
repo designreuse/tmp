@@ -1,11 +1,11 @@
 package com.softserve.osbb.config;
 
-import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreator;
-import com.softserve.osbb.config.multitenancy.DatabaseRuntimeCreatorPostgresImpl;
+import com.softserve.osbb.tenant.DatabaseRuntimeCreator;
+import com.softserve.osbb.tenant.impl.DatabaseRuntimeCreatorPostgresImpl;
 import com.softserve.osbb.config.multitenancy.TenantBeenFactoryPostProcessor;
-import com.softserve.osbb.model.Tenant;
+import com.softserve.osbb.tenant.TenantDatasourceProperties;
+import com.softserve.osbb.tenant.impl.TenantDatasourcePropertiesPostgresImpl;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.boot.SpringApplication;
@@ -71,13 +71,18 @@ private static Logger logger = Logger.getLogger(WebAppConfiguration.class);
 
         return registrationBean;
     }
-    @Bean
-    public BeanFactoryPostProcessor beanFactoryPostProcessor() {
-        return new TenantBeenFactoryPostProcessor();
-    }
+//    @Bean
+//    public BeanFactoryPostProcessor beanFactoryPostProcessor() {
+//        return new TenantBeenFactoryPostProcessor();
+//    }
 
     @Bean
     public DatabaseRuntimeCreator databaseRuntimeCreator(){
         return new DatabaseRuntimeCreatorPostgresImpl();
+    }
+
+    @Bean
+    public TenantDatasourceProperties tenantDatasourceProperties(){
+        return new TenantDatasourcePropertiesPostgresImpl();
     }
 }

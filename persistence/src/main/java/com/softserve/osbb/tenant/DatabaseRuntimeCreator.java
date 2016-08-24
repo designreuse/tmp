@@ -1,4 +1,4 @@
-package com.softserve.osbb.config.multitenancy;
+package com.softserve.osbb.tenant;
 
 import org.springframework.context.annotation.Bean;
 

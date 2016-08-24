@@ -24,24 +24,6 @@
                       "name": "name",
                       "type": "VARCHAR(245)"
                     }
-                  },
-                  {
-                    "column": {
-                      "name": "datasource_url",
-                      "type": "VARCHAR(245)"
-                    }
-                  },
-                  {
-                    "column": {
-                      "name": "datasource_user",
-                      "type": "VARCHAR(245)"
-                    }
-                  },
-                  {
-                    "column": {
-                      "name": "datasource_password",
-                      "type": "VARCHAR(245)"
-                    }
                   }
                 ]
               ,

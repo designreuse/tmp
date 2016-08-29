@@ -1,4 +1,4 @@
-package com.softserve.osbb.common;
+package com.softserve.osbb.common.controller;
 
 import com.softserve.osbb.common.model.Osbbs;
 import com.softserve.osbb.common.model.Tenant;

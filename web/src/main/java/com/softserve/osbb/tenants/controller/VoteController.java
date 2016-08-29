@@ -1,4 +1,4 @@
-package com.softserve.osbb.controller;
+package com.softserve.osbb.tenants.controller;
 
 import com.softserve.osbb.dto.VoteDTO;
 import com.softserve.osbb.dto.VoteDTOMapper;

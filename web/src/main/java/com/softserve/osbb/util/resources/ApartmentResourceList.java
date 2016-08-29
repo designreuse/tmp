@@ -1,6 +1,6 @@
 package com.softserve.osbb.util.resources;
 
-import com.softserve.osbb.controller.ApartmentController;
+import com.softserve.osbb.tenants.controller.ApartmentController;
 import com.softserve.osbb.tenants.model.Apartment;
 import org.springframework.hateoas.Resource;
 

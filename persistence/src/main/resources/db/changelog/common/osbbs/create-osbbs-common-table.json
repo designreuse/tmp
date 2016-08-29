@@ -24,14 +24,73 @@
                       "name": "name",
                       "type": "VARCHAR(245)"
                     }
+                  },
+                  {
+                    "column": {
+                      "name": "url",
+                      "type": "VARCHAR(245)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "username",
+                      "type": "VARCHAR(245)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "password",
+                      "type": "VARCHAR(245)"
+                    }
                   }
-                ]
-              ,
+                ],
                 "tableName": "osbbs"
               }
             }]
 
         }
-      }
+  },
+  {
+    "changeSet": {
+      "id": "29-09-2016-01",
+      "author": "aska",
+      "changes": [
+        {
+          "insert": {
+            "columns": [
+              {
+                "column": {
+                  "name": "name",
+                  "type": "varchar(255)",
+                  "value": "initial"
+                }
+              },{
+                "column": {
+                  "name": "url",
+                  "type": "varchar(255)",
+                  "value": "jdbc:postgresql://localhost:5432/initial"
+                }
+              },
+              {
+                "column": {
+                  "name": "username",
+                  "type": "varchar(255)",
+                  "value": "postgres"
+                }
+              },
+              {
+                "column": {
+                  "name": "password",
+                  "type": "varchar(255)",
+                  "value": "postgres"
+                }
+              }],
+            "schemaName": "public",
+            "tableName": "osbbs"
+          }
+        }]
+
+    }
+  }
     ]
 }

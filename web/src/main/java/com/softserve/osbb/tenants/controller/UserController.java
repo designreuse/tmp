@@ -1,4 +1,4 @@
-package com.softserve.osbb.controller;
+package com.softserve.osbb.tenants.controller;
 
 import com.softserve.osbb.tenants.model.User;
 import com.softserve.osbb.tenants.service.UserService;

@@ -1,6 +1,6 @@
-package com.softserve.osbb.controller;
+package com.softserve.osbb.tenants.controller;
 
-import com.softserve.osbb.config.multitenancy.TenantContext;
+import com.softserve.osbb.config.TenantContext;
 import com.softserve.osbb.tenants.model.Contract;
 import com.softserve.osbb.tenants.service.ContractService;
 import org.slf4j.Logger;

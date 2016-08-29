@@ -1,6 +1,6 @@
 package com.softserve.osbb.util.resources;
 
-import com.softserve.osbb.controller.HouseController;
+import com.softserve.osbb.tenants.controller.HouseController;
 import com.softserve.osbb.dto.HouseDTO;
 import org.springframework.hateoas.Resource;
 

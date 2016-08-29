@@ -2,15 +2,18 @@ package com.softserve.osbb.common.model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "osbbs")
 public class Osbbs {
     private Integer osbbId;
     private String name;
+
+    private String username;
+    private String password;
+    private String url;
+
 
     public Osbbs(String name) {
         this.name = name;
@@ -37,6 +40,33 @@ public class Osbbs {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Column(name = "username")
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Column(name = "url")
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

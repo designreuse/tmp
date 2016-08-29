@@ -1,6 +1,6 @@
 package com.softserve.osbb.dto.mappers;
 
-import com.softserve.osbb.controller.ReportController;
+import com.softserve.osbb.tenants.controller.ReportController;
 import com.softserve.osbb.dto.ProviderPageDTO;
 import com.softserve.osbb.tenants.model.Provider;
 import com.softserve.osbb.tenants.model.ProviderType;

@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Mail;
-import com.softserve.osbb.service.impl.MailSenderImpl;
+import com.softserve.osbb.tenants.model.Mail;
+import com.softserve.osbb.tenants.service.impl.MailSenderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

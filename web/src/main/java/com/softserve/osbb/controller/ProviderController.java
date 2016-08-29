@@ -2,9 +2,9 @@ package com.softserve.osbb.controller;
 
 import com.softserve.osbb.dto.ProviderPageDTO;
 import com.softserve.osbb.dto.mappers.ProviderPageDtoMapper;
-import com.softserve.osbb.model.Provider;
-import com.softserve.osbb.service.ProviderService;
-import com.softserve.osbb.service.ProviderTypeService;
+import com.softserve.osbb.tenants.model.Provider;
+import com.softserve.osbb.tenants.service.ProviderService;
+import com.softserve.osbb.tenants.service.ProviderTypeService;
 import com.softserve.osbb.util.EntityNotFoundException;
 import com.softserve.osbb.util.PageCreator;
 import org.slf4j.Logger;

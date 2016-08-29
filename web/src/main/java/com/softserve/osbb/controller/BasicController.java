@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.User;
-import com.softserve.osbb.service.UserService;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;

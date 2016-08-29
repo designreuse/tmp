@@ -1,7 +1,8 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Report;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Report;
+import com.softserve.osbb.tenants.repository.ReportRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +23,7 @@ import static org.junit.Assert.*;
  * Created by nazar.dovhyy on 04.07.2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Transactional
 public class ReportRepositoryTest {
 

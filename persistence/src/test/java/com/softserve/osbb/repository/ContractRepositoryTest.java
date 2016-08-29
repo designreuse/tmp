@@ -1,8 +1,9 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Attachment;
-import com.softserve.osbb.model.Contract;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Attachment;
+import com.softserve.osbb.tenants.model.Contract;
+import com.softserve.osbb.tenants.repository.ContractRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +22,7 @@ import java.util.List;
  * Created by Roma on 06/07/2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration (classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration (classes = PersistenceAppConfiguration.class)
 @Transactional
 public class ContractRepositoryTest {
 

@@ -1,9 +1,9 @@
 package com.softserve.osbb.service;
 
-import com.softserve.osbb.config.ServiceApplication;
-import com.softserve.osbb.model.ProviderType;
-import com.softserve.osbb.repository.ProviderTypeRepository;
-import com.softserve.osbb.service.impl.ProviderTypeServiceImpl;
+import com.softserve.osbb.ServiceAppConfiguration;
+import com.softserve.osbb.tenants.model.ProviderType;
+import com.softserve.osbb.tenants.repository.ProviderTypeRepository;
+import com.softserve.osbb.tenants.service.impl.ProviderTypeServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringApplicationConfiguration(classes = ServiceApplication.class)
+@SpringApplicationConfiguration(classes = ServiceAppConfiguration.class)
 public class ProviderTypeServiceTest {
 
     @Mock

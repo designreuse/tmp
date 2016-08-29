@@ -1,9 +1,11 @@
 package com.softserve.osbb.service;
 
-import com.softserve.osbb.config.ServiceApplication;
-import com.softserve.osbb.model.Event;
-import com.softserve.osbb.model.Osbb;
-import com.softserve.osbb.model.enums.Periodicity;
+import com.softserve.osbb.ServiceAppConfiguration;
+import com.softserve.osbb.tenants.model.Event;
+import com.softserve.osbb.tenants.model.Osbb;
+import com.softserve.osbb.tenants.model.enums.Periodicity;
+import com.softserve.osbb.tenants.service.EventService;
+import com.softserve.osbb.tenants.service.OsbbService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +26,7 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ServiceApplication.class)
+@SpringApplicationConfiguration(classes = ServiceAppConfiguration.class)
 @Rollback
 @Transactional
 public class EventServiceTest {

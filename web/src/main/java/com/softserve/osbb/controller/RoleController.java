@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Role;
-import com.softserve.osbb.service.RoleService;
+import com.softserve.osbb.tenants.model.Role;
+import com.softserve.osbb.tenants.service.RoleService;
 import com.softserve.osbb.util.PageCreator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

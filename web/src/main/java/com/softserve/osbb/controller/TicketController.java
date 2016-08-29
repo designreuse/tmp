@@ -1,8 +1,8 @@
 package com.softserve.osbb.controller;
 
 
-import com.softserve.osbb.model.Ticket;
-import com.softserve.osbb.service.TicketService;
+import com.softserve.osbb.tenants.model.Ticket;
+import com.softserve.osbb.tenants.service.TicketService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

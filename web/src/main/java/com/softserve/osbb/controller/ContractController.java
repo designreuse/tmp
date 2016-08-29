@@ -1,13 +1,12 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Contract;
-import com.softserve.osbb.service.ContractService;
+import com.softserve.osbb.tenants.model.Contract;
+import com.softserve.osbb.tenants.service.ContractService;
 import com.softserve.osbb.util.PageCreator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
 import org.springframework.hateoas.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

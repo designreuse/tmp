@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Attachment;
-import com.softserve.osbb.service.AttachmentService;
+import com.softserve.osbb.tenants.model.Attachment;
+import com.softserve.osbb.tenants.service.AttachmentService;
 import com.softserve.osbb.util.PageCreator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

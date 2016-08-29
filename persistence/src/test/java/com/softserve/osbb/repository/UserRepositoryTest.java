@@ -1,7 +1,8 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.User;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.repository.UserRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Rollback
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 public class UserRepositoryTest extends Assert {
     private User user;
     private User user2;

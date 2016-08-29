@@ -1,7 +1,8 @@
 package com.softserve.osbb.service;
 
-import com.softserve.osbb.config.ServiceApplication;
-import com.softserve.osbb.model.Attachment;
+import com.softserve.osbb.ServiceAppConfiguration;
+import com.softserve.osbb.tenants.model.Attachment;
+import com.softserve.osbb.tenants.service.AttachmentService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ServiceApplication.class)
+@SpringApplicationConfiguration(classes = ServiceAppConfiguration.class)
 @Rollback
 @Transactional
 public class AttachmentServiceTest {

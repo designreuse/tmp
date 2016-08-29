@@ -1,7 +1,8 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.ProviderType;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.ProviderType;
+import com.softserve.osbb.tenants.repository.ProviderTypeRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Rollback
 @Transactional
 public class ProviderTypeRepositoryTest {

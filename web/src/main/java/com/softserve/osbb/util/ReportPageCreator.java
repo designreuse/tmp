@@ -1,9 +1,8 @@
 package com.softserve.osbb.util;
 
-import com.softserve.osbb.model.Report;
+import com.softserve.osbb.tenants.model.Report;
 import org.springframework.hateoas.Resource;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

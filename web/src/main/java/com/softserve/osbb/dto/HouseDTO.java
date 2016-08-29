@@ -1,7 +1,7 @@
 package com.softserve.osbb.dto;
 
-import com.softserve.osbb.model.House;
-import com.softserve.osbb.model.Osbb;
+import com.softserve.osbb.tenants.model.House;
+import com.softserve.osbb.tenants.model.Osbb;
 
 /**
  * Created by nazar.dovhyy on 03.08.2016.

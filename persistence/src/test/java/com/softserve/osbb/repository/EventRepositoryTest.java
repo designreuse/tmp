@@ -1,9 +1,11 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Event;
-import com.softserve.osbb.model.Osbb;
-import com.softserve.osbb.model.enums.Periodicity;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Event;
+import com.softserve.osbb.tenants.model.Osbb;
+import com.softserve.osbb.tenants.model.enums.Periodicity;
+import com.softserve.osbb.tenants.repository.EventRepository;
+import com.softserve.osbb.tenants.repository.OsbbRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +27,7 @@ import static org.junit.Assert.*;
 
 @Rollback
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Transactional
 public class EventRepositoryTest {
 

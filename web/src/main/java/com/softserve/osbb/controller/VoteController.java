@@ -2,12 +2,12 @@ package com.softserve.osbb.controller;
 
 import com.softserve.osbb.dto.VoteDTO;
 import com.softserve.osbb.dto.VoteDTOMapper;
-import com.softserve.osbb.model.Option;
-import com.softserve.osbb.model.User;
-import com.softserve.osbb.model.Vote;
-import com.softserve.osbb.service.OptionService;
-import com.softserve.osbb.service.UserService;
-import com.softserve.osbb.service.VoteService;
+import com.softserve.osbb.tenants.model.Option;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.model.Vote;
+import com.softserve.osbb.tenants.service.OptionService;
+import com.softserve.osbb.tenants.service.UserService;
+import com.softserve.osbb.tenants.service.VoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

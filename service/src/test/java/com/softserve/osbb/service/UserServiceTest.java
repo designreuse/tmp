@@ -2,8 +2,9 @@ package com.softserve.osbb.service; /**
  * Created by cavayman on 11.07.2016.
  */
 
-import com.softserve.osbb.config.ServiceApplication;
-import com.softserve.osbb.model.User;
+import com.softserve.osbb.ServiceAppConfiguration;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.service.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import static org.junit.Assert.assertEquals;
  * Created by cavayman on 05.07.2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ServiceApplication.class)
+@SpringApplicationConfiguration(classes = ServiceAppConfiguration.class)
 public class UserServiceTest {
     private User user;
     @Autowired

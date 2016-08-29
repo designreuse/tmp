@@ -1,7 +1,8 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Vote;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Vote;
+import com.softserve.osbb.tenants.repository.VoteRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ import static org.junit.Assert.assertTrue;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Transactional
 public class VoteRepositoryTest {
 

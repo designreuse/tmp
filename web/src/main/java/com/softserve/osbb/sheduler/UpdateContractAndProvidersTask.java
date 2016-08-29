@@ -3,26 +3,18 @@ package com.softserve.osbb.sheduler;
 /**
  * Created by Anastasiia Fedorak on 8/16/16.
  */
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import com.softserve.osbb.controller.AttachmentController;
-import com.softserve.osbb.model.Contract;
-import com.softserve.osbb.model.Mail;
-import com.softserve.osbb.model.Provider;
-import com.softserve.osbb.service.ContractService;
-import com.softserve.osbb.service.ProviderService;
-import com.softserve.osbb.service.impl.MailSenderImpl;
+import com.softserve.osbb.tenants.model.Contract;
+import com.softserve.osbb.tenants.model.Provider;
+import com.softserve.osbb.tenants.service.ContractService;
+import com.softserve.osbb.tenants.service.ProviderService;
+import com.softserve.osbb.tenants.service.impl.MailSenderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.mail.MessagingException;
 
 @Component
 public class UpdateContractAndProvidersTask {

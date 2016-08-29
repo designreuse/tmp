@@ -1,10 +1,13 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Apartment;
-import com.softserve.osbb.model.Bill;
-import com.softserve.osbb.model.Provider;
-import com.softserve.osbb.model.enums.Periodicity;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Apartment;
+import com.softserve.osbb.tenants.model.Bill;
+import com.softserve.osbb.tenants.model.Provider;
+import com.softserve.osbb.tenants.model.enums.Periodicity;
+import com.softserve.osbb.tenants.repository.ApartmentRepository;
+import com.softserve.osbb.tenants.repository.BillRepository;
+import com.softserve.osbb.tenants.repository.ProviderRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +29,7 @@ import static org.junit.Assert.*;
 
 @Rollback
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Transactional
 public class BillRepositoryTest {
 

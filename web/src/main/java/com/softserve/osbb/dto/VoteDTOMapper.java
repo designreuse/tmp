@@ -1,8 +1,8 @@
 package com.softserve.osbb.dto;
 
-import com.softserve.osbb.model.Option;
-import com.softserve.osbb.model.User;
-import com.softserve.osbb.model.Vote;
+import com.softserve.osbb.tenants.model.Option;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.model.Vote;
 
 import java.util.ArrayList;
 import java.util.List;

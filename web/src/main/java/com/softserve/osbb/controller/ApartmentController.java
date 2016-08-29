@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Apartment;
-import com.softserve.osbb.service.ApartmentService;
+import com.softserve.osbb.tenants.model.Apartment;
+import com.softserve.osbb.tenants.service.ApartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,12 @@
 package com.softserve.osbb.repository;
 
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Attachment;
-import com.softserve.osbb.model.Ticket;
-import com.softserve.osbb.model.User;
-import com.softserve.osbb.model.enums.TicketState;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Attachment;
+import com.softserve.osbb.tenants.model.Ticket;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.model.enums.TicketState;
+import com.softserve.osbb.tenants.repository.TicketRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +17,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
  * Created by Kris on 05.07.2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Transactional
 public class TicketRepositoryTest {
 

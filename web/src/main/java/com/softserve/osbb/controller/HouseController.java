@@ -2,9 +2,9 @@ package com.softserve.osbb.controller;
 
 import com.softserve.osbb.dto.HouseDTO;
 import com.softserve.osbb.dto.mappers.HouseDTOMapper;
-import com.softserve.osbb.model.Apartment;
-import com.softserve.osbb.model.House;
-import com.softserve.osbb.service.HouseService;
+import com.softserve.osbb.tenants.model.Apartment;
+import com.softserve.osbb.tenants.model.House;
+import com.softserve.osbb.tenants.service.HouseService;
 import com.softserve.osbb.util.PageCreator;
 import com.softserve.osbb.util.resources.ApartmentResourceList;
 import com.softserve.osbb.util.resources.EntityResourceList;

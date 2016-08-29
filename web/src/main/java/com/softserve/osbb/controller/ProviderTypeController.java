@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.ProviderType;
-import com.softserve.osbb.service.ProviderTypeService;
+import com.softserve.osbb.tenants.model.ProviderType;
+import com.softserve.osbb.tenants.service.ProviderTypeService;
 import com.softserve.osbb.util.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

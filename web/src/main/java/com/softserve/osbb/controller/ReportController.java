@@ -1,11 +1,11 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Osbb;
-import com.softserve.osbb.model.Report;
-import com.softserve.osbb.model.User;
-import com.softserve.osbb.service.UserService;
-import com.softserve.osbb.service.gen.InvoiceDownloadService;
-import com.softserve.osbb.service.impl.ReportServiceImpl;
+import com.softserve.osbb.tenants.model.Osbb;
+import com.softserve.osbb.tenants.model.Report;
+import com.softserve.osbb.tenants.model.User;
+import com.softserve.osbb.tenants.service.UserService;
+import com.softserve.osbb.gen.InvoiceDownloadService;
+import com.softserve.osbb.tenants.service.impl.ReportServiceImpl;
 import com.softserve.osbb.util.ReportPageCreator;
 import com.softserve.osbb.util.ResourceNotFoundException;
 import com.softserve.osbb.utils.CustomLocalDateTimeDeserializer;

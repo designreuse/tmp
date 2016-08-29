@@ -1,7 +1,7 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Bill;
-import com.softserve.osbb.service.BillService;
+import com.softserve.osbb.tenants.model.Bill;
+import com.softserve.osbb.tenants.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

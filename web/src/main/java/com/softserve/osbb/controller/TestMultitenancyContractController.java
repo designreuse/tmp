@@ -1,8 +1,8 @@
 package com.softserve.osbb.controller;
 
 import com.softserve.osbb.config.multitenancy.TenantContext;
-import com.softserve.osbb.model.Contract;
-import com.softserve.osbb.service.ContractService;
+import com.softserve.osbb.tenants.model.Contract;
+import com.softserve.osbb.tenants.service.ContractService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

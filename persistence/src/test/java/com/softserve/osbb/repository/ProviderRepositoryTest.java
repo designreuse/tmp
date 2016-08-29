@@ -1,8 +1,9 @@
 package com.softserve.osbb.repository;
 
-import com.softserve.osbb.PersistenceConfiguration;
-import com.softserve.osbb.model.Provider;
-import com.softserve.osbb.model.enums.Periodicity;
+import com.softserve.osbb.PersistenceAppConfiguration;
+import com.softserve.osbb.tenants.model.Provider;
+import com.softserve.osbb.tenants.model.enums.Periodicity;
+import com.softserve.osbb.tenants.repository.ProviderRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,7 @@ import java.util.HashSet;
  * Created by Anastasiia Fedorak on 05.07.2016.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PersistenceConfiguration.class)
+@SpringApplicationConfiguration(classes = PersistenceAppConfiguration.class)
 @Rollback
 @Transactional
 public class ProviderRepositoryTest {

@@ -1,8 +1,8 @@
 package com.softserve.osbb.controller;
 
-import com.softserve.osbb.model.Event;
-import com.softserve.osbb.model.Osbb;
-import com.softserve.osbb.service.EventService;
+import com.softserve.osbb.tenants.model.Event;
+import com.softserve.osbb.tenants.model.Osbb;
+import com.softserve.osbb.tenants.service.EventService;
 import com.softserve.osbb.util.PageCreator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,12 +1,8 @@
 package com.softserve.osbb.dto;
 
 
-import com.softserve.osbb.model.Bill;
-import com.softserve.osbb.model.Contract;
-import com.softserve.osbb.model.ProviderType;
-import com.softserve.osbb.model.enums.Periodicity;
-
-import java.util.Collection;
+import com.softserve.osbb.tenants.model.ProviderType;
+import com.softserve.osbb.tenants.model.enums.Periodicity;
 
 /**
  * Created by Anastasiia Fedorak on 8/2/16.

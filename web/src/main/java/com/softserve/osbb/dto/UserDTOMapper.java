@@ -1,6 +1,6 @@
 package com.softserve.osbb.dto;
 
-import com.softserve.osbb.model.User;
+import com.softserve.osbb.tenants.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

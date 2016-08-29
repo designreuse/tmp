@@ -3,6 +3,7 @@
   import org.apache.log4j.Logger;
   import org.springframework.beans.factory.annotation.Autowired;
   import org.springframework.beans.factory.annotation.Qualifier;
+  import org.springframework.beans.factory.annotation.Value;
   import org.springframework.context.annotation.Bean;
   import org.springframework.context.annotation.Configuration;
   import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -25,6 +26,9 @@
       @Autowired
       private TenantsDataSourceMap tenantsDataSourceMap;
 
+      @Value("${spring.jpa.properties.hibernate.dialect}")
+      private String hibernateDialect;
+
       @Bean
       public LocalContainerEntityManagerFactoryBean tenantEntityManagerFactory() {
           logger.info("configuring tenant emf...");
@@ -39,7 +43,6 @@
           logger.info("end of configuring tenant emf");
           return em;
       }
-
 
       @Bean
       public DataSource tenantDataSource() {
@@ -60,10 +63,10 @@
           return transactionManager;
       }
 
-
       Properties additionalProperties() {
           Properties properties = new Properties();
-          properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+          properties.setProperty("hibernate.dialect", hibernateDialect);
           return properties;
       }
+
   }

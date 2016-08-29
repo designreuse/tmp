@@ -18,6 +18,9 @@ public class TenantDatasourcePropertiesPostgresImpl implements TenantDatasourceP
     @Value("${spring.datasource.url}")
     String defaultUrl;
 
+    @Value("${spring.datasource.driver-class-name}")
+    String driverClassName;
+
     @Override
     public Properties getDefaultPropertiesByTenantName(String tenantName) {
         Properties properties = new Properties();
@@ -25,6 +28,7 @@ public class TenantDatasourcePropertiesPostgresImpl implements TenantDatasourceP
         properties.setProperty("datasource.url", createDatabaseUrl(defaultUrl,tenantName));
         properties.setProperty("datasource.username", defaultUsername);
         properties.setProperty("datasource.password", defaultPassword);
+        properties.setProperty("datasource.driver", driverClassName);
         return properties;
     }
 

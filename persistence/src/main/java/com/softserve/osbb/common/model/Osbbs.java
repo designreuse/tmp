@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Osbbs {
     private Integer osbbId;
     private String name;
-
     private String username;
     private String password;
     private String url;
@@ -20,6 +19,13 @@ public class Osbbs {
     }
 
     public Osbbs() {
+    }
+
+    public Osbbs(String name, String url, String username, String password) {
+        this.name = name;
+        this.url = url;
+        this.username = username;
+        this.password = password;
     }
 
     @Id

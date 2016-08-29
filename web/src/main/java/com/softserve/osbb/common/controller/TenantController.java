@@ -1,7 +1,6 @@
 package com.softserve.osbb.common.controller;
 
 import com.softserve.osbb.common.model.Osbbs;
-import com.softserve.osbb.common.model.Tenant;
 import com.softserve.osbb.common.service.CommonOsbbsService;
 import com.softserve.osbb.tenant.DatabaseRuntimeCreator;
 import org.slf4j.Logger;
@@ -26,14 +25,13 @@ public class TenantController {
     CommonOsbbsService osbbsService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Tenant> addTenant(@RequestBody Tenant tenant) {
+    public ResponseEntity<Osbbs> addTenant(@RequestBody Osbbs tenantOsbb) {
         logger.info("creating new tenant");
         try {
-            osbbsService.saveOsbb(new Osbbs(tenant.getTenantName()));
+            osbbsService.saveOsbb(new Osbbs(tenantOsbb.getName()));
         } catch (Exception e) {
             logger.error("could not save osbb");
         }
-
-        return ResponseEntity.ok(tenant);
+        return ResponseEntity.ok(tenantOsbb);
     }
 }

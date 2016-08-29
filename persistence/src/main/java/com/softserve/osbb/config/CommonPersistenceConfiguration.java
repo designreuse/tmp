@@ -3,6 +3,7 @@ package com.softserve.osbb.config;
 import liquibase.integration.spring.SpringLiquibase;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -23,7 +24,21 @@ import java.util.Properties;
         transactionManagerRef = "transactionManager")
 public class CommonPersistenceConfiguration {
     private static Logger logger = Logger.getLogger(CommonPersistenceConfiguration.class);
-    
+    @Value("${spring.datasource.username}")
+    String commonDatasourceUsername;
+
+    @Value("${spring.datasource.password}")
+    String commonDatasourcePassword;
+
+    @Value("${spring.datasource.url}")
+    String commonDatasourceUrl;
+
+    @Value("${spring.datasource.driver-class-name}")
+    String driverClassName;
+
+    @Value("${spring.jpa.properties.hibernate.dialect}")
+    private String hibernateDialect;
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         logger.info("configuring common emf...");
@@ -34,7 +49,6 @@ public class CommonPersistenceConfiguration {
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaProperties(additionalProperties());
         logger.info("end of configuring common emf");
         return em;
     }
@@ -43,10 +57,10 @@ public class CommonPersistenceConfiguration {
     public DataSource dataSource() {
         logger.info("configuring persistence datasource...");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/common");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("postgres");
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(commonDatasourceUrl);
+        dataSource.setUsername(commonDatasourceUsername);
+        dataSource.setPassword(commonDatasourcePassword);
         logger.info("end of configuring persistance datasource");
         return dataSource;
     }
@@ -72,7 +86,8 @@ public class CommonPersistenceConfiguration {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+        properties.setProperty("hibernate.dialect", hibernateDialect);
         return properties;
     }
+
 }

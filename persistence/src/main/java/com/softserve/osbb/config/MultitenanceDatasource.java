@@ -2,7 +2,6 @@ package com.softserve.osbb.config;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.datasource.AbstractDataSource;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,16 +15,18 @@ public class MultitenanceDatasource extends AbstractDataSource {
     @Override
     public Connection getConnection() throws SQLException {
         DataSource ds = determineTargetDataSource();
-        logger.info("Datasource: " + ds);
-        logger.info("getting connection...");
+        logger.info("----------------------------------------");
+        logger.info("getting connection to datasource: " + ds);
+        logger.info("----------------------------------------");
         return ds.getConnection();
     }
 
     @Override
     public Connection getConnection(String username, String password) throws SQLException {
         DataSource ds = determineTargetDataSource();
-        logger.info("Datasource: " + ds);
-        logger.info("getting connection...");
+        logger.info("----------------------------------------");
+        logger.info("getting connection to datasource: " + ds);
+        logger.info("----------------------------------------");
         return ds.getConnection(username, password);
     }
 

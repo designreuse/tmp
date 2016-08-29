@@ -56,7 +56,7 @@ public class CommonOsbbsServiceImpl implements CommonOsbbsService {
             logger.info(e.getMessage());
         }
 
-        DynamicTenantBeanCreator.getInstance().create(osbb.getName(), applicationContext, tenantDatasourceProperties);
+        DynamicTenantBeanCreator.create(osbb.getName(), applicationContext, tenantDatasourceProperties);
         commonOsbbsRepository.save(osbb);
 
     }

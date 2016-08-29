@@ -42,7 +42,7 @@ public class Contract {
         this.contractId = contractId;
     }
 
-    @Column(name = "dateStart")
+    @Column(name = "date_start")
     @JsonSerialize(using = CustomLocalDateTimeSerializer.class)
     public LocalDate getDateStart() {
         return dateStart;
@@ -53,7 +53,7 @@ public class Contract {
         this.dateStart = dateStart;
     }
 
-    @Column(name = "dateFinish")
+    @Column(name = "date_finish")
     @JsonSerialize(using = CustomLocalDateTimeSerializer.class)
     public LocalDate getDateFinish() {
         return dateFinish;
@@ -140,5 +140,19 @@ public class Contract {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "contractId=" + contractId +
+                ", dateStart=" + dateStart +
+                ", dateFinish=" + dateFinish +
+                ", text='" + text + '\'' +
+                ", price=" + price +
+                ", priceCurrency=" + priceCurrency +
+                ", provider=" + provider.getName() +
+                ", active=" + active +
+                '}';
     }
 }

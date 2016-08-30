@@ -63,8 +63,9 @@
           return transactionManager;
       }
 
-      Properties additionalProperties() {
+      private Properties additionalProperties() {
           Properties properties = new Properties();
+          logger.info("set hibernate dialect " + hibernateDialect);
           properties.setProperty("hibernate.dialect", hibernateDialect);
           return properties;
       }

@@ -49,6 +49,7 @@ public class CommonPersistenceConfiguration {
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
+        em.setJpaProperties(additionalProperties());
         logger.info("end of configuring common emf");
         return em;
     }
@@ -84,7 +85,7 @@ public class CommonPersistenceConfiguration {
         return transactionManager;
     }
 
-    Properties additionalProperties() {
+    private Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", hibernateDialect);
         return properties;

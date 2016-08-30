@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by Anastasiia Fedorak on 8/24/16.
@@ -44,6 +45,11 @@ public class CommonOsbbsServiceImpl implements CommonOsbbsService {
     }
 
     @Override
+    public List<Osbbs> findOsbbByName(String name) {
+        return commonOsbbsRepository.findByName(name);
+    }
+
+    @Override
     public void saveOsbb(Osbbs osbb) throws Exception {
         try {
             Process p = databaseRuntimeCreator.create(Runtime.getRuntime(), osbb.getName());
@@ -55,6 +61,11 @@ public class CommonOsbbsServiceImpl implements CommonOsbbsService {
         } catch (InterruptedException e) {
             logger.info(e.getMessage());
         }
+
+        Properties prop = tenantDatasourceProperties.getDefaultPropertiesByTenantName(osbb.getName());
+        osbb.setUrl(prop.getProperty("datasource.url"));
+        osbb.setUsername(prop.getProperty("datasource.username"));
+        osbb.setPassword(prop.getProperty("datasource.password"));
 
         DynamicTenantBeanCreator.create(osbb.getName(), applicationContext, tenantDatasourceProperties);
         commonOsbbsRepository.save(osbb);

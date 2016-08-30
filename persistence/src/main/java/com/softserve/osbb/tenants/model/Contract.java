@@ -146,12 +146,9 @@ public class Contract {
     public String toString() {
         return "Contract{" +
                 "contractId=" + contractId +
-                ", dateStart=" + dateStart +
-                ", dateFinish=" + dateFinish +
                 ", text='" + text + '\'' +
                 ", price=" + price +
                 ", priceCurrency=" + priceCurrency +
-                ", provider=" + provider.getName() +
                 ", active=" + active +
                 '}';
     }

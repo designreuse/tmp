@@ -14,11 +14,11 @@ public class Osbbs {
     private String url;
 
 
-    public Osbbs(String name) {
-        this.name = name;
+    public Osbbs() {
     }
 
-    public Osbbs() {
+    public Osbbs(String name) {
+        this.name = name;
     }
 
     public Osbbs(String name, String url, String username, String password) {

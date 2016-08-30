@@ -41,22 +41,23 @@ public class TenantsDataSourceMap extends HashMap<Object, Object> {
             value = setUpInitialDatasource();
         } else {
             value = super.get(key);
+            logger.info("value: " + value);
         }
-        logger.info("value is: " + value);
         if (value == null) {
+            logger.info("adding new tenant to the map");
             CommonOsbbsRepository repo = applicationContext.getBean(CommonOsbbsRepository.class);
             Osbbs tenantOsbb =repo.findOne((Integer) key);
             logger.info("tenant osbb is " + tenantOsbb);
             if (tenantOsbb != null) {
                 logger.info("building datasource...");
                 DataSource dataSource =  DataSourceBuilder.create()
-                        .driverClassName(driverClassName)
-                        .username(tenantOsbb.getUsername()).password(tenantOsbb.getPassword())
-                        .url(tenantOsbb.getUrl()).build();
+                            .driverClassName(driverClassName)
+                            .username(tenantOsbb.getUsername()).password(tenantOsbb.getPassword())
+                            .url(tenantOsbb.getUrl()).build();
                 logger.info("success: " + dataSource);
                 value = dataSource;
-                super.put(key, value);
             }
+            super.put(key, value);
         }
         return value;
     }

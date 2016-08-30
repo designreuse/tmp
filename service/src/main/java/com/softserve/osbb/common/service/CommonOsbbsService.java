@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public interface CommonOsbbsService {
         Osbbs findOneOsbbById(Integer id);
+        List<Osbbs> findOsbbByName(String name);
         List<Osbbs> findAllOsbbs();
         void saveOsbb(Osbbs osbb) throws Exception;
 

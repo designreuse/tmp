@@ -32,7 +32,7 @@ public class DatabaseUpdater implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         List<Osbbs> osbbs = commonOsbbsService.findAllOsbbs();
         for (Osbbs osbb : osbbs) {
-            DynamicTenantBeanCreator.getInstance().create(osbb.getName(), applicationContext, tenantDatasorceProperties);
+            DynamicTenantBeanCreator.create(osbb.getName(), applicationContext, tenantDatasorceProperties);
         }
         logger.info("successfully update from changelog");
     }
